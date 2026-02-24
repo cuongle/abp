@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.card {
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+label {
+  display: block;
+  margin: 10px 0 4px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  background: #1f6feb;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #57606a;
+  margin-left: 8px;
+}
+
+.actions,
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e7e7e7;
+  text-align: left;
+  padding: 8px;
+}
+
+.message {
+  color: #0969da;
+}
