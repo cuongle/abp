@@ -1,0 +1,43 @@
+<div class="page">
+  <h1>User Management</h1>
+
+  <div class="card" *ngIf="!token">
+    <h2>Login</h2>
+    <label>Username</label>
+    <input [(ngModel)]="loginModel.userName" placeholder="email@company.com">
+    <label>Password</label>
+    <input [(ngModel)]="loginModel.password" type="password">
+    <div class="actions">
+      <button (click)="login()">Login</button>
+      <button class="secondary" (click)="loginWithSso()">Azure AD SSO</button>
+    </div>
+  </div>
+
+  <div class="card" *ngIf="token && me">
+    <div class="row">
+      <h2>Welcome {{ me.userName }}</h2>
+      <button class="secondary" (click)="logout()">Logout</button>
+    </div>
+    <p>Role: <strong>{{ me.role }}</strong></p>
+
+    <h3>Change Password</h3>
+    <label>Current Password</label>
+    <input [(ngModel)]="passwordModel.currentPassword" type="password">
+    <label>New Password</label>
+    <input [(ngModel)]="passwordModel.newPassword" type="password">
+    <button (click)="changePassword()">Update Password</button>
+  </div>
+
+  <div class="card" *ngIf="me?.role === 'Admin'">
+    <h2>All Users (Admin)</h2>
+    <table>
+      <tr><th>Username</th><th>Role</th></tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.userName }}</td>
+        <td>{{ user.role }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <p class="message">{{ message }}</p>
+</div>
